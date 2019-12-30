@@ -3,7 +3,7 @@ import xarray as xr
 import numpy as np
 print("Indice de Vegetacion Ajustado al Suelo")
 
-##
+#
 period_red = xarr0["red"].values
 period_nir = xarr0["nir"].values
 
