@@ -3,7 +3,7 @@ import xarray as xr
 import numpy as np
 print("Indice de estimación de severidad de fuegos Version 2")
 
-
+##
 period_red = xarr0["red"].values
 period_nir = xarr0["nir"].values
 
