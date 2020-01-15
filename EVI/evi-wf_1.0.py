@@ -5,10 +5,13 @@ print("Indice de vegetacion mejorado")
 period_red = xarr0["red"].values
 period_nir = xarr0["nir"].values
 period_blue = xarr0["blue"].values
-
+##Enmascara los valores de nan de las bandas seleccionadas
 mask_nan=np.logical_or(np.isnan(period_red), np.isnan(period_nir),np.isnan(period_blue))
+#Calculo de valores para el indice de vegetacion mejorada
 a= (period_nir-period_red)
 b= (period_nir+period_red-(7.5*period_blue)+1)
+
+#Calculo del indice de vegetacion mejorada
 period_evi= 2.5*(a/b)
 
 period_evi[mask_nan]=np.nan
@@ -16,7 +19,7 @@ period_evi[mask_nan]=np.nan
 period_evi[period_evi>1]=np.nan
 period_evi[period_evi<-1]=np.nan
 
-
+#Asignacion de dimensiones y preparacion de salida
 ncoords=[]
 xdims =[]
 xcords={}
